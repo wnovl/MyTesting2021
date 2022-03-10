@@ -1,0 +1,331 @@
+// Type: TaskManager.Program 
+// Assembly: TaskManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 960207E5-65C5-4895-A9B0-2E75582E3DBC
+// Location: E:\Hw wnovl\MyTesting2021\MyTesting2021\Hw6\TaskManager\bin\Debug\TaskManager.exe
+// Sequence point data from decompiler
+
+.class private auto ansi beforefieldinit
+  TaskManager.Program
+    extends [mscorlib]System.Object
+{
+
+  .method private hidebysig static void
+    Main(
+      string[] args
+    ) cil managed
+  {
+    .entrypoint
+    .maxstack 1
+    .locals init (
+      [0] int32 V_0
+    )
+
+    IL_0000: nop
+
+    // [16 7 - 16 41]
+    IL_0001: ldstr        "ID:\t\tName\n"
+    IL_0006: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_000b: nop
+
+    // [17 7 - 17 23]
+    IL_000c: call         void TaskManager.Program::Output()
+    IL_0011: nop
+
+    // [18 7 - 18 47]
+    IL_0012: ldstr        "\nВыберете действие"
+    IL_0017: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_001c: nop
+
+    // [19 7 - 19 43]
+    IL_001d: ldstr        "1) Kill by Name"
+    IL_0022: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_0027: nop
+
+    // [20 7 - 20 41]
+    IL_0028: ldstr        "2) Kill by ID"
+    IL_002d: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_0032: nop
+
+    // [21 7 - 21 35]
+    IL_0033: ldstr        "3) Exit"
+    IL_0038: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_003d: nop
+
+    // [22 7 - 22 52]
+    IL_003e: call         string [mscorlib]System.Console::ReadLine()
+    IL_0043: call         int32 [mscorlib]System.Int32::Parse(string)
+    IL_0048: stloc.0      // V_0
+    IL_0049: ldloc.0      // V_0
+    IL_004a: call         void TaskManager.Program::Choose(int32)
+    IL_004f: nop
+
+    // [23 7 - 23 25]
+    IL_0050: call         string [mscorlib]System.Console::ReadLine()
+    IL_0055: pop
+    IL_0056: ret
+
+  } // end of method Program::Main
+
+  .method private hidebysig static void
+    Output() cil managed
+  {
+    .maxstack 3
+    .locals init (
+      [0] class [System]System.Diagnostics.Process[] V_0,
+      [1] int32 V_1,
+      [2] class [System]System.Diagnostics.Process process
+    )
+
+    IL_0000: nop
+    IL_0001: nop
+
+    // [28 35 - 28 57]
+    IL_0002: call         class [System]System.Diagnostics.Process[] [System]System.Diagnostics.Process::GetProcesses()
+    IL_0007: stloc.0      // V_0
+
+    IL_0008: ldc.i4.0
+    IL_0009: stloc.1      // V_1
+    IL_000a: br.s         IL_0037
+    // start of loop, entry point: IL_0037
+
+      // [28 16 - 28 31]
+      IL_000c: ldloc.0      // V_0
+      IL_000d: ldloc.1      // V_1
+      IL_000e: ldelem.ref
+      IL_000f: stloc.2      // process
+      IL_0010: nop
+
+      // [29 9 - 29 106]
+      IL_0011: ldstr        "{0}\t\t{1}"
+      IL_0016: ldloc.2      // process
+      IL_0017: callvirt     instance int32 [System]System.Diagnostics.Process::get_Id()
+      IL_001c: box          [mscorlib]System.Int32
+      IL_0021: ldloc.2      // process
+      IL_0022: callvirt     instance string [System]System.Diagnostics.Process::get_ProcessName()
+      IL_0027: call         string [mscorlib]System.String::Format(string, object, object)
+      IL_002c: call         void [mscorlib]System.Console::WriteLine(string)
+      IL_0031: nop
+      IL_0032: nop
+
+      IL_0033: ldloc.1      // V_1
+      IL_0034: ldc.i4.1
+      IL_0035: add
+      IL_0036: stloc.1      // V_1
+      IL_0037: ldloc.1      // V_1
+      IL_0038: ldloc.0      // V_0
+      IL_0039: ldlen
+      IL_003a: conv.i4
+      IL_003b: blt.s        IL_000c
+    // end of loop
+    IL_003d: ret
+
+  } // end of method Program::Output
+
+  .method private hidebysig static void
+    Choose(
+      int32 cK
+    ) cil managed
+  {
+    .maxstack 2
+    .locals init (
+      [0] class [System]System.Diagnostics.Process process1,
+      [1] bool flag,
+      [2] string str,
+      [3] int32 num,
+      [4] int32 V_4,
+      [5] int32 V_5,
+      [6] class [System]System.Diagnostics.Process[] V_6,
+      [7] int32 V_7,
+      [8] class [System]System.Diagnostics.Process process2,
+      [9] bool V_9,
+      [10] class [System]System.Diagnostics.Process[] V_10,
+      [11] int32 V_11,
+      [12] class [System]System.Diagnostics.Process process3,
+      [13] bool V_13,
+      [14] bool V_14
+    )
+
+    IL_0000: nop
+
+    // [34 7 - 34 39]
+    IL_0001: newobj       instance void [System]System.Diagnostics.Process::.ctor()
+    IL_0006: stloc.0      // process1
+
+    // [35 7 - 35 23]
+    IL_0007: ldc.i4.1
+    IL_0008: stloc.1      // flag
+
+    IL_0009: br           IL_00f7
+    // start of loop, entry point: IL_00f7
+      IL_000e: nop
+
+      // [38 9 - 38 20]
+      IL_000f: ldarg.0      // cK
+      IL_0010: stloc.s      V_5
+
+      IL_0012: ldloc.s      V_5
+      IL_0014: stloc.s      V_4
+      IL_0016: ldloc.s      V_4
+      IL_0018: ldc.i4.1
+      IL_0019: sub
+      IL_001a: switch       (IL_0030, IL_0090, IL_00f2)
+      IL_002b: br           IL_00f6
+
+      // [41 13 - 41 80]
+      IL_0030: ldstr        "Введите имя процесса, который нужно завершить."
+      IL_0035: call         void [mscorlib]System.Console::WriteLine(string)
+      IL_003a: nop
+
+      // [42 13 - 42 44]
+      IL_003b: call         string [mscorlib]System.Console::ReadLine()
+      IL_0040: stloc.2      // str
+      IL_0041: nop
+
+      // [43 42 - 43 64]
+      IL_0042: call         class [System]System.Diagnostics.Process[] [System]System.Diagnostics.Process::GetProcesses()
+      IL_0047: stloc.s      V_6
+
+      IL_0049: ldc.i4.0
+      IL_004a: stloc.s      V_7
+      IL_004c: br.s         IL_0086
+      // start of loop, entry point: IL_0086
+
+        // [43 22 - 43 38]
+        IL_004e: ldloc.s      V_6
+        IL_0050: ldloc.s      V_7
+        IL_0052: ldelem.ref
+        IL_0053: stloc.s      process2
+        IL_0055: nop
+
+        // [45 15 - 45 47]
+        IL_0056: ldloc.s      process2
+        IL_0058: callvirt     instance string [System]System.Diagnostics.Process::get_ProcessName()
+        IL_005d: ldloc.2      // str
+        IL_005e: call         bool [mscorlib]System.String::op_Equality(string, string)
+        IL_0063: stloc.s      V_9
+
+        IL_0065: ldloc.s      V_9
+        IL_0067: brfalse.s    IL_007f
+        IL_0069: nop
+
+        // [47 17 - 47 32]
+        IL_006a: ldloc.s      process2
+        IL_006c: callvirt     instance void [System]System.Diagnostics.Process::Kill()
+        IL_0071: nop
+
+        // [48 17 - 48 67]
+        IL_0072: ldstr        "Процесс был успешно завершен."
+        IL_0077: call         void [mscorlib]System.Console::WriteLine(string)
+        IL_007c: nop
+
+        // [49 17 - 49 23]
+        IL_007d: br.s         IL_008e
+        IL_007f: nop
+
+        IL_0080: ldloc.s      V_7
+        IL_0082: ldc.i4.1
+        IL_0083: add
+        IL_0084: stloc.s      V_7
+        IL_0086: ldloc.s      V_7
+        IL_0088: ldloc.s      V_6
+        IL_008a: ldlen
+        IL_008b: conv.i4
+        IL_008c: blt.s        IL_004e
+      // end of loop
+      IL_008e: br.s         IL_00f6
+
+      // [54 13 - 54 79]
+      IL_0090: ldstr        "Введите ID процесса, который нужно завершить."
+      IL_0095: call         void [mscorlib]System.Console::WriteLine(string)
+      IL_009a: nop
+
+      // [55 13 - 55 52]
+      IL_009b: call         string [mscorlib]System.Console::ReadLine()
+      IL_00a0: call         int32 [mscorlib]System.Int32::Parse(string)
+      IL_00a5: stloc.3      // num
+      IL_00a6: nop
+
+      // [56 42 - 56 64]
+      IL_00a7: call         class [System]System.Diagnostics.Process[] [System]System.Diagnostics.Process::GetProcesses()
+      IL_00ac: stloc.s      V_10
+
+      IL_00ae: ldc.i4.0
+      IL_00af: stloc.s      V_11
+      IL_00b1: br.s         IL_00e8
+      // start of loop, entry point: IL_00e8
+
+        // [56 22 - 56 38]
+        IL_00b3: ldloc.s      V_10
+        IL_00b5: ldloc.s      V_11
+        IL_00b7: ldelem.ref
+        IL_00b8: stloc.s      process3
+        IL_00ba: nop
+
+        // [58 15 - 58 38]
+        IL_00bb: ldloc.s      process3
+        IL_00bd: callvirt     instance int32 [System]System.Diagnostics.Process::get_Id()
+        IL_00c2: ldloc.3      // num
+        IL_00c3: ceq
+        IL_00c5: stloc.s      V_13
+
+        IL_00c7: ldloc.s      V_13
+        IL_00c9: brfalse.s    IL_00e1
+        IL_00cb: nop
+
+        // [60 17 - 60 32]
+        IL_00cc: ldloc.s      process3
+        IL_00ce: callvirt     instance void [System]System.Diagnostics.Process::Kill()
+        IL_00d3: nop
+
+        // [61 17 - 61 67]
+        IL_00d4: ldstr        "Процесс был успешно завершен."
+        IL_00d9: call         void [mscorlib]System.Console::WriteLine(string)
+        IL_00de: nop
+
+        // [62 17 - 62 23]
+        IL_00df: br.s         IL_00f0
+        IL_00e1: nop
+
+        IL_00e2: ldloc.s      V_11
+        IL_00e4: ldc.i4.1
+        IL_00e5: add
+        IL_00e6: stloc.s      V_11
+        IL_00e8: ldloc.s      V_11
+        IL_00ea: ldloc.s      V_10
+        IL_00ec: ldlen
+        IL_00ed: conv.i4
+        IL_00ee: blt.s        IL_00b3
+      // end of loop
+      IL_00f0: br.s         IL_00f6
+
+      // [67 13 - 67 25]
+      IL_00f2: ldc.i4.0
+      IL_00f3: stloc.1      // flag
+
+      // [68 13 - 68 19]
+      IL_00f4: br.s         IL_00f6
+      IL_00f6: nop
+
+      // [36 7 - 36 19]
+      IL_00f7: ldloc.1      // flag
+      IL_00f8: stloc.s      V_14
+
+      IL_00fa: ldloc.s      V_14
+      IL_00fc: brtrue       IL_000e
+    // end of loop
+    IL_0101: ret
+
+  } // end of method Program::Choose
+
+  .method public hidebysig specialname rtspecialname instance void
+    .ctor() cil managed
+  {
+    .maxstack 8
+
+    IL_0000: ldarg.0      // this
+    IL_0001: call         instance void [mscorlib]System.Object::.ctor()
+    IL_0006: nop
+    IL_0007: ret
+
+  } // end of method Program::.ctor
+} // end of class TaskManager.Program
